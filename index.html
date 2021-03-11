@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breadcrumb</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: sans-serif;
+            font-size:14px
+        }
+        .bx-breadcrumb-main{
+            display: flex;
+            margin-top: 15px;
+            margin-left: 10px;
+            line-height: 1.5;
+        }
+
+        .bx-breadcrumb.mobile .bx-breadcrumb-item{
+            float:none !important;
+            display:block
+        }
+
+        .bx-breadcrumb.mobile{
+            display: none;
+            position: relative;
+            width: 300px;
+            height: auto;
+            padding: 15px;
+            text-align:center;
+            background: #FFFFFF;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            border: #E6E6E6 solid 1px;
+            margin:15px 0 0 10px;
+        }
+
+        .bx-breadcrumb.mobile.active{
+            display: block;
+        }
+
+        .bx-breadcrumb-main .fa-angle-right{
+            line-height:1.5 !important;
+            margin-right: 5px;
+        }
+
+        .points{
+            width:100px;
+            border:1px solid #e6e6e6;
+            border-radius:3px;
+            line-height: 0.7;
+            color: #e6e6e6;
+            text-align:center;
+            margin-right: 5px;
+            cursor:pointer
+        }
+
+        .bx-breadcrumb.mobile:after
+        {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 0 15px 15px;
+            border-color: #FFFFFF transparent;
+            display: block;
+            width: 0;
+            z-index: 1;
+            top: -15px;
+            left: 34px;
+        }
+
+        .bx-breadcrumb.mobile:before
+        {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 0 15px 15px;
+            border-color: #E6E6E6 transparent;
+            display: block;
+            width: 0;
+            z-index: 0;
+            top: -16px;
+            left: 34px;
+        }
+        .bx-breadcrumb-item a, .bx-breadcrumb-main a{
+            color: #ff9800;
+            text-decoration:none
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="bx-breadcrumb-main">
+            <div class="points">...</div>
+            <div class="fa fa-angle-right"></div>
+            <div class="first">
+                <a href="/">
+                    <span>U.S. PLAST</span>
+                </a>
+            </div>
+        </div>
+        <div class="bx-breadcrumb mobile" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+            <div class="bx-breadcrumb-item" id="bx_breadcrumb_1" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a href="/skud/" title="Системы контроля доступа (СКУД)" itemprop="item">
+                    <span itemprop="name">Системы контроля доступа (СКУД)</span>
+                </a>
+                <meta itemprop="position" content="2">
+            </div>
+            <div class="bx-breadcrumb-item__icon">
+                <div class="fa fa-angle-down"></div>
+            </div>
+
+            <div class="bx-breadcrumb-item" id="bx_breadcrumb_2" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a href="/skud/schityvateli/" title="Считыватели СКУД" itemprop="item">
+                    <span itemprop="name">Считыватели СКУД</span>
+                </a>
+                <meta itemprop="position" content="3">
+            </div>
+            <div class="bx-breadcrumb-item__icon">
+                <div class="fa fa-angle-down"></div>
+            </div>
+
+            <div class="bx-breadcrumb-item" id="bx_breadcrumb_3" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a href="/skud/schityvateli/biometricheskie-schityvateli/" title="Биометрические считыватели контроля доступа" itemprop="item">
+                    <span itemprop="name">Биометрические считыватели контроля доступа</span>
+                </a>
+                <meta itemprop="position" content="4">
+            </div>
+            <div class="bx-breadcrumb-item__icon">
+                <div class="fa fa-angle-down"></div>
+            </div>
+
+            <div class="bx-breadcrumb-item" id="bx_breadcrumb_4" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a href="/skud/schityvateli/biometricheskie-schityvateli/anviz/" title="Биометрические терминалы Anviz" itemprop="item">
+                    <span itemprop="name">Биометрические терминалы Anviz</span>
+                </a>
+                <meta itemprop="position" content="5">
+            </div>
+            <div class="bx-breadcrumb-item__icon">
+                <div class="fa fa-angle-down"></div>
+            </div>
+            <div class="bx-breadcrumb-item">
+                 <span itemprop="name">Anviz C2 Slim, биометрический терминал контроля доступа</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.points').on('click', function(){
+            $('.bx-breadcrumb.mobile').toggleClass('active');
+        })
+    </script>
+</body>
+</html>
